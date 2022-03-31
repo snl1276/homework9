@@ -1,7 +1,9 @@
-import logging
+from loguru import logger
  
-logging.basicConfig(filename="logs.log", level=logging.INFO)
+logger.add("logs.log")
  
-logging.debug("This is a debug message")
-logging.info("Informational message")
-logging.error("An error has happened!")
+logger.debug("Debug message")
+logger.info("Info message")
+logger.warning("Warning messange")
+logger.error("Error message")
+logger.critical("Critical message")
