@@ -3,6 +3,8 @@ from datetime import datetime
 import datetime
 import enum
 import random
+from pathlib import Path
+import os
 
 
 class Color(enum.Enum):
@@ -28,7 +30,7 @@ def toy():
 
 @main.command()
 @click.option('--hours', is_flag=True)
-def newyear(hours):
+def newyear(hours, type=str, help='the parameter of the number of hours until the new year'):
     a = datetime.datetime.today()
     newyear = datetime.datetime(2023, 1, 1)
     c = newyear - a
@@ -40,9 +42,29 @@ def newyear(hours):
         click.echo(f"{c.days} days")
 
 
+paths = (os.path.join(root, filename)
+        for root, dirs, filenames in os.walk('D:\HOMEWORK9\directory')
+        for filename in filenames)
+
+@main.command()
+def restructuredirectory():
+    paths = (os.path.join(root, filename)
+        for root, dirs, filenames in os.walk('D:\HOMEWORK9\directory')
+        for filename in filenames)
+
+
+    for path in paths:
+        newname = path.replace('-', '\\')
+        if newname != path:
+            os.renames(path, newname)
+
 main.add_command(toy)
 main.add_command(newyear)
+main.add_command(restructuredirectory)
+
+print(toy.__annotations__)
+print(newyear.__annotations__)
 
 
 if __name__ == '__main__':
-    main()    
+    main()   
