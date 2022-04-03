@@ -5,3 +5,8 @@ ERROR:root:An error has happened!
 2022-03-31 23:03:18.084 | WARNING  | __main__:<module>:7 - Warning messange
 2022-03-31 23:03:18.085 | ERROR    | __main__:<module>:8 - Error message
 2022-03-31 23:03:18.086 | CRITICAL | __main__:<module>:9 - Critical message
+2022-04-02 00:11:34.559 | DEBUG    | __main__:<module>:5 - Debug message
+2022-04-02 00:11:34.564 | INFO     | __main__:<module>:6 - Info message
+2022-04-02 00:11:34.566 | WARNING  | __main__:<module>:7 - Warning messange
+2022-04-02 00:11:34.569 | ERROR    | __main__:<module>:8 - Error message
+2022-04-02 00:11:34.571 | CRITICAL | __main__:<module>:9 - Critical message
